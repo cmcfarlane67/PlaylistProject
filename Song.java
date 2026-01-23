@@ -1,6 +1,6 @@
 /**
  * File for a Song class to be used in the Playlist Project
- * @author
+ * @Catherine
  * @version
  */
 public class Song {
