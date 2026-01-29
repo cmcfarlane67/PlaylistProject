@@ -38,6 +38,7 @@ public class Playlist {
        */
     public void addSong(Song s){
         songs.add(s);
+        System.out.println("Added " + s);
     }
 
     public void likeSong(int index) {
@@ -66,5 +67,26 @@ public class Playlist {
         }
     }
 
-    
+    public String getTotalDuration(){
+        int totalSeconds = 0;
+        for (Song s : songs){
+            totalSeconds += (s.getMinutes() * 60) + s.getSeconds();
+        }
+        int totalMinutes = totalSeconds / 60;
+        int secondsLeft = totalSeconds % 60;
+
+        String secString = "" + secondsLeft;
+        if (secondsLeft < 10){
+            secString = "0" + secondsLeft;
+        } 
+        return totalMinutes + ":" + secString;
+    }    
+
+    public void removeAllUnlikedSongs(){
+        for (int i = songs.size() - 1; i >= 0; i--){
+            if (!songs.get(i).getLiked()){
+                songs.remove(i);
+            }
+        }
+    }
 }
