@@ -9,6 +9,7 @@ public class Playlist {
      * Fields-- This will likely just need to be the ArrayList of Songs. Reference our previous problems
      * (CarDealership, Zoo) for structure on how this will look
      */
+    private ArrayList<Song> songs;
 
 
 
@@ -17,8 +18,12 @@ public class Playlist {
       * Constructor-- this doesn't need any parameters. You should just initialize the ArrayList and
       * then use additional methods to add Songs in one-by-one
       */
+     public Playlist(){
+        songs = new ArrayList<Song>();
+     }
 
 
+    
       
 
       /**
@@ -31,4 +36,35 @@ public class Playlist {
        * Determining the total duration of all songs
        * Removing all unliked songs from the playlist (careful with this one!)
        */
+    public void addSong(Song s){
+        songs.add(s);
+    }
+
+    public void likeSong(int index) {
+        if (index >= 0 && index < songs.size()) {
+            songs.get(index).like();
+        }
+    }
+    
+    public void removeSong(int index) {
+        if (index >= 0 && index < songs.size()) {
+            songs.remove(index);
+        }
+    }
+
+    public void printAllSongs() {
+        for (Song s : songs) {
+            System.out.println(s);
+        }
+    }
+
+     public void printLikedSongs() {
+        for (Song s : songs) {
+            if (s.getLiked()) {
+                System.out.println(s);
+            }
+        }
+    }
+
+    
 }
