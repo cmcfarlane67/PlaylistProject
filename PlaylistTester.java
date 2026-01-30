@@ -18,10 +18,7 @@ public class PlaylistTester {
          * is something like...
          * p.addSong(new Song(..., ..., ...))
          */
-        p.addSong(new Song("anthems", "charli xcx", 2, 51));
-        p.addSong(new Song("Chewing Gum", "Blood Orange", 4, 23));
-        p.addSong(new Song("2 On", "Tinashe", 3, 47));
-        p.addSong(new Song("Cognac Queen", "Megan Thee Stallion", 3, 42));
+        
 
 
         System.out.println("\nPrinting the songs...\n");
@@ -31,9 +28,7 @@ public class PlaylistTester {
 
         System.out.println("\nLiking the songs in position 1, 3, and 4...\n");
         //Once your songs are 'liked', this should be reflected in the next printout
-        p.likeSong(0);
-        p.likeSong(2);
-        p.likeSong(3);
+       
 
 
         System.out.println("Printing the songs...\n");
